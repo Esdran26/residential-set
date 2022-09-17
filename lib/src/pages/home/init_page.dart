@@ -18,7 +18,7 @@ class InitPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'images/tu_conjunto.jpeg',
+                'images/tu_conjunto.png',
                 height: 150.0,
               ),
               const SizedBox(
@@ -52,9 +52,9 @@ class InitPage extends StatelessWidget {
                     Card(
                       elevation: 4.0,
                       child: ListTile(
-                        title: Text('Como empresa', style: fontNormal),
+                        title: Text('Como administrador', style: fontNormal),
                         leading: Icon(
-                          Icons.medical_services,
+                          Icons.admin_panel_settings,
                           color: primaryColor,
                         ),
                         trailing: const Icon(Icons.keyboard_arrow_right),
@@ -70,9 +70,9 @@ class InitPage extends StatelessWidget {
                     Card(
                       elevation: 4.0,
                       child: ListTile(
-                        title: Text('Como contador', style: fontNormal),
+                        title: Text('Como administrativo', style: fontNormal),
                         leading: Icon(
-                          Icons.person,
+                          Icons.badge,
                           color: primaryColor,
                         ),
                         trailing: const Icon(Icons.keyboard_arrow_right),
@@ -86,9 +86,9 @@ class InitPage extends StatelessWidget {
                     Card(
                       elevation: 4.0,
                       child: ListTile(
-                        title: Text('Como empleado', style: fontNormal),
+                        title: Text('Como residente', style: fontNormal),
                         leading: Icon(
-                          Icons.badge,
+                          Icons.person,
                           color: primaryColor,
                         ),
                         trailing: const Icon(Icons.keyboard_arrow_right),

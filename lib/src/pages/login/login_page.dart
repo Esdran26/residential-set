@@ -47,14 +47,14 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 100.0,
+                  height: 50.0,
                 ),
                 Image.asset(
-                  'images/tu_conjunto.jpeg',
-                  width: 200.0,
+                  'images/tu_conjunto.png',
+                  width: 100.0,
                 ),
                 const SizedBox(
-                  height: 100.0,
+                  height: 50.0,
                 ),
                 Align(
                   alignment: Alignment.centerLeft,

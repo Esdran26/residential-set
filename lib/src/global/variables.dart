@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-Color primaryColor = const Color(0xff3c3f99);
+Color primaryColor = const Color(0xff79288b);
 
 TextStyle fontNormal = const TextStyle(
   fontWeight: FontWeight.w600,

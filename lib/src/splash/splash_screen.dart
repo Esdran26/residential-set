@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:residential_set/main.dart';
+import 'package:residential_set/src/pages/home/init_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         const Duration(seconds: 2),
         () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const MyApp())));
+            context, MaterialPageRoute(builder: (context) => const InitPage())));
 
     super.initState();
   }
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Expanded(
             child: Center(
               child: Image.asset(
-                'images/tu-conjunto.jpeg',
+                'images/tu_conjunto.png',
                 height: 100.0,
               ),
             ),
@@ -48,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: const Text(
-                      'Grafosoft',
+                      'Tu Conjunto',
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontFamily: 'Century Gothic',

@@ -14,11 +14,6 @@ Android Studio ofrece una experiencia completa e integrada del IDE para Flutter.
 
 [Android Studio](https://developer.android.com/studio/index.html), versión 3.0 o superior.
 
-Otra opción puede ser utilizar IntelliJ:
-
-[IntelliJ IDEA Community](https://www.jetbrains.com/idea/download/), versión 2017.1 o superior.
-[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/), versión 2017.1 o superior.
-
 ### Instalar los plugins de Flutter y Dart
 
 Para instalar estos:

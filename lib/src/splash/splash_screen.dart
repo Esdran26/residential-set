@@ -15,8 +15,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(
         const Duration(seconds: 2),
-        () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const InitPage())));
+        () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const InitPage())));
 
     super.initState();
   }
@@ -38,26 +38,17 @@ class _SplashScreenState extends State<SplashScreen> {
           Container(
             padding: const EdgeInsets.symmetric(vertical: 50.0),
             child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'images/logo_splash.png',
-                    height: 24.0,
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: const Text(
+                  'Tu Conjunto',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'Century Gothic',
+                    fontSize: 20.0,
+                    color: Colors.grey,
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: const Text(
-                      'Tu Conjunto',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Century Gothic',
-                        fontSize: 20.0,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           )

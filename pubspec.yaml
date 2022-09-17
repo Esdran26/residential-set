@@ -93,5 +93,5 @@ flutter:
 flutter_icons:
   ios: true
   android: "launcher_icon"
-  image_path: "images/tu-conjunto.jpeg"
+  image_path: "images/tu_conjunto.png"
   remove_alpha_ios: true

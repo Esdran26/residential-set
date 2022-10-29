@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-Color primaryColor = const Color(0xff79288b);
+Color primaryColor = const Color(0xff513baa);
 
 TextStyle fontNormal = const TextStyle(
   fontWeight: FontWeight.w600,
@@ -32,7 +32,7 @@ TextStyle fontNormalGrey = const TextStyle(
 TextStyle fontBig = const TextStyle(
     fontWeight: FontWeight.w600,
     fontFamily: 'NunitoSans',
-    fontSize: 15.0,
+    fontSize: 25.0,
     color: Color.fromRGBO(45, 52, 54, 1.0));
 
 TextStyle fontBigSurvey = const TextStyle(

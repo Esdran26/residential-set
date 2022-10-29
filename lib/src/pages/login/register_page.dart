@@ -4,21 +4,22 @@ import 'package:flutter/material.dart';
 // Custom Imports
 import 'package:residential_set/src/global/variables.dart';
 import 'package:residential_set/src/pages/home/list_main.dart';
-import 'package:residential_set/src/pages/login/forgot_password.dart';
-import 'package:residential_set/src/pages/login/register_page.dart';
+import 'package:residential_set/src/pages/login/login_page.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   static bool isValidEmailNumber = false;
   static bool isValidPasswordNumber = false;
+  static bool isValidUser = false;
   String emailLogin = '';
   String passwordLogin = '';
+  String userLogin = '';
   String allContent = '';
   bool isVisible = false;
 
@@ -26,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     isValidEmailNumber = false;
     isValidPasswordNumber = false;
+    isValidUser = false;
     super.initState();
   }
 
@@ -65,6 +67,45 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(
                   height: 50.0,
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Nombre de usuario',
+                    style: fontNormal,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                      hintText: 'hsdj_2020',
+                      prefixIcon: Icon(
+                        CupertinoIcons.person_fill,
+                        color: primaryColor,
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 15.0),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      )),
+                  onChanged: (value) {
+                    if (value.length >= 4) {
+                      setState(() {
+                        isValidUser = true;
+                        userLogin = value;
+                      });
+                    } else {
+                      setState(() {
+                        isValidUser = false;
+                      });
+                    }
+                  },
+                ),
+                const SizedBox(
+                  height: 30.0,
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
@@ -159,7 +200,7 @@ class _LoginPageState extends State<LoginPage> {
                 GestureDetector(
                   child: Center(
                     child: Text(
-                      'Olvidaste tu contraseña?',
+                      'Ya tienes una cuenta? Inicia Sesión',
                       style: TextStyle(
                           color: primaryColor,
                           decoration: TextDecoration.underline),
@@ -169,26 +210,7 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ForgotPassword()));
-                  },
-                ),
-                const SizedBox(
-                  height: 15.0,
-                ),
-                GestureDetector(
-                  child: Center(
-                    child: Text(
-                      'No tienes una cuenta? Regístrate',
-                      style: TextStyle(
-                          color: primaryColor,
-                          decoration: TextDecoration.underline),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const RegisterPage()));
+                            builder: (context) => const LoginPage()));
                   },
                 ),
                 const SizedBox(
@@ -197,8 +219,9 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(200.0, 50.0),
-                      backgroundColor: isValidEmailNumber == true &&
-                              isValidPasswordNumber == true
+                      backgroundColor: isValidEmailNumber &&
+                              isValidPasswordNumber &&
+                              isValidUser
                           ? primaryColor
                           : CupertinoColors.systemGrey2,
                     ),

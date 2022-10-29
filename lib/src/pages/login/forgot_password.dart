@@ -1,31 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-// Custom Imports
 import 'package:residential_set/src/global/variables.dart';
-import 'package:residential_set/src/pages/home/list_main.dart';
-import 'package:residential_set/src/pages/login/forgot_password.dart';
-import 'package:residential_set/src/pages/login/register_page.dart';
+import 'package:residential_set/src/pages/login/login_page.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class ForgotPassword extends StatefulWidget {
+  const ForgotPassword({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<ForgotPassword> createState() => _ForgotPasswordState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   static bool isValidEmailNumber = false;
-  static bool isValidPasswordNumber = false;
   String emailLogin = '';
-  String passwordLogin = '';
   String allContent = '';
   bool isVisible = false;
 
   @override
   void initState() {
     isValidEmailNumber = false;
-    isValidPasswordNumber = false;
     super.initState();
   }
 
@@ -36,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: primaryColor,
         centerTitle: true,
         title: const Text(
-          'Bienvenido',
+          'Recupera tu contraseña',
           style: TextStyle(
               fontWeight: FontWeight.w600,
               fontFamily: 'NunitoSans',
@@ -107,98 +100,10 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 30.0,
                 ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Contraseña',
-                    style: fontNormal,
-                  ),
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                TextField(
-                  obscureText: isVisible == true ? false : true,
-                  decoration: InputDecoration(
-                      hintText: 'd3ltagamm',
-                      prefixIcon: Icon(
-                        CupertinoIcons.lock_fill,
-                        color: primaryColor,
-                      ),
-                      suffixIcon: IconButton(
-                        icon: Icon(isVisible == false
-                            ? Icons.visibility_off
-                            : Icons.visibility),
-                        onPressed: () {
-                          setState(() {
-                            isVisible = !isVisible;
-                          });
-                        },
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 20.0, vertical: 15.0),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      )),
-                  onChanged: (value) {
-                    if (value.length >= 4) {
-                      setState(() {
-                        isValidPasswordNumber = true;
-                        passwordLogin = value;
-                      });
-                    } else {
-                      setState(() {
-                        isValidPasswordNumber = false;
-                      });
-                    }
-                  },
-                ),
-                const SizedBox(
-                  height: 30.0,
-                ),
-                GestureDetector(
-                  child: Center(
-                    child: Text(
-                      'Olvidaste tu contraseña?',
-                      style: TextStyle(
-                          color: primaryColor,
-                          decoration: TextDecoration.underline),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ForgotPassword()));
-                  },
-                ),
-                const SizedBox(
-                  height: 15.0,
-                ),
-                GestureDetector(
-                  child: Center(
-                    child: Text(
-                      'No tienes una cuenta? Regístrate',
-                      style: TextStyle(
-                          color: primaryColor,
-                          decoration: TextDecoration.underline),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const RegisterPage()));
-                  },
-                ),
-                const SizedBox(
-                  height: 30.0,
-                ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(200.0, 50.0),
-                      backgroundColor: isValidEmailNumber == true &&
-                              isValidPasswordNumber == true
+                      fixedSize: const Size(220.0, 50.0),
+                      backgroundColor: isValidEmailNumber == true
                           ? primaryColor
                           : CupertinoColors.systemGrey2,
                     ),
@@ -206,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ListMain()));
+                              builder: (context) => const LoginPage()));
                       // final prefs = await SharedPreferences.getInstance();
 
                       // allContent = '$emailLogin:$passwordLogin';
@@ -218,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                       // fetchLogin(context, encoded);
                     },
                     child: Text(
-                      'Siguiente',
+                      'Recuperar Contraseña',
                       style: fontNormalButton,
                     )),
               ],

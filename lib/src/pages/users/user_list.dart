@@ -249,6 +249,7 @@ class UserListState extends State<UserList> {
                             ),
                           ],
                         );
+                     
                       } else {
                         if (invoiceItems.isNotEmpty) {
                           return Padding(
@@ -281,7 +282,7 @@ class UserListState extends State<UserList> {
                                   height: 20.0,
                                 ),
                                 Text(
-                                  'No tienes usuario agregados',
+                                  'No tienes usuarios agregados',
                                   style: fontBig,
                                 )
                               ],

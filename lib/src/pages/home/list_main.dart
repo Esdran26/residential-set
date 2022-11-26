@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:residential_set/src/global/variables.dart';
 import 'package:residential_set/src/pages/bitacora/bitacora_list.dart';
 import 'package:residential_set/src/pages/join/join_list.dart';
+import 'package:residential_set/src/pages/login/login_page.dart';
 import 'package:residential_set/src/pages/resident_list.dart/resident_list.dart';
 import 'package:residential_set/src/pages/thirds/thirds_list.dart';
 import 'package:residential_set/src/pages/users/user_list.dart';
@@ -171,13 +172,13 @@ class _ListMainState extends State<ListMain> {
                         Container(
                           padding: const EdgeInsets.all(10.0),
                           decoration: BoxDecoration(
-                              color: const Color(0xffffefed),
+                              color: const Color(0xffe4fafd),
                               borderRadius: BorderRadius.circular(20.0)),
                           height: 100.0,
                           width: 100.0,
                           child: const Icon(
                             Icons.fact_check_rounded,
-                            color: Color(0xffce7f7d),
+                            color: Color(0xff25c0c7),
                             size: 50.0,
                           ),
                         ),
@@ -243,39 +244,47 @@ class _ListMainState extends State<ListMain> {
                       ],
                     ),
                   ),
-                  Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                            color: const Color(0xffe4fafd),
-                            borderRadius: BorderRadius.circular(20.0)),
-                        height: 100.0,
-                        width: 100.0,
-                        child: const Icon(
-                          Icons.help,
-                          color: Color(0xff25c0c7),
-                          size: 50.0,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginPage()));
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                              color: const Color(0xffffefed),
+                              borderRadius: BorderRadius.circular(20.0)),
+                          height: 100.0,
+                          width: 100.0,
+                          child: const Icon(
+                            Icons.logout,
+                            color: Color(0xffce7f7d),
+                            size: 50.0,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      Center(
-                        child: Column(
-                          children: [
-                            Text(
-                              'Preguntas',
-                              style: fontNormalBold,
-                            ),
-                            Text(
-                              'Frecuentes',
-                              style: fontNormalBold,
-                            ),
-                          ],
+                        const SizedBox(
+                          height: 10.0,
                         ),
-                      ),
-                    ],
+                        Center(
+                          child: Column(
+                            children: [
+                              Text(
+                                'Cerrar',
+                                style: fontNormalBold,
+                              ),
+                              Text(
+                                'Sesión',
+                                style: fontNormalBold,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               )

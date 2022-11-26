@@ -192,10 +192,6 @@ class _ListMainState extends State<ListMain> {
                                 'Ingresos',
                                 style: fontNormalBold,
                               ),
-                              Text(
-                                '',
-                                style: fontNormalBold,
-                              ),
                             ],
                           ),
                         ),
@@ -234,10 +230,6 @@ class _ListMainState extends State<ListMain> {
                                 'Acompañantes',
                                 style: fontNormalBold,
                               ),
-                              Text(
-                                '',
-                                style: fontNormalBold,
-                              ),
                             ],
                           ),
                         ),
@@ -246,7 +238,7 @@ class _ListMainState extends State<ListMain> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const LoginPage()));
@@ -273,13 +265,10 @@ class _ListMainState extends State<ListMain> {
                           child: Column(
                             children: [
                               Text(
-                                'Cerrar',
+                                'Cerrar Sesión',
                                 style: fontNormalBold,
                               ),
-                              Text(
-                                'Sesión',
-                                style: fontNormalBold,
-                              ),
+                              
                             ],
                           ),
                         ),

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:residential_set/src/global/variables.dart';
+import 'package:residential_set/src/pages/bitacora/bitacora_list.dart';
+import 'package:residential_set/src/pages/join/join_list.dart';
+import 'package:residential_set/src/pages/resident_list.dart/resident_list.dart';
+import 'package:residential_set/src/pages/thirds/thirds_list.dart';
 import 'package:residential_set/src/pages/users/user_list.dart';
 
 class ListMain extends StatefulWidget {
@@ -47,7 +51,10 @@ class _ListMainState extends State<ListMain> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const UserList()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const UserList()));
                     },
                     child: Column(
                       children: [
@@ -76,57 +83,73 @@ class _ListMainState extends State<ListMain> {
                       ],
                     ),
                   ),
-                  Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                            color: const Color(0xfffef5e5),
-                            borderRadius: BorderRadius.circular(20.0)),
-                        height: 100.0,
-                        width: 100.0,
-                        child: const Icon(
-                          Icons.apartment_rounded,
-                          color: Color(0xffebb75c),
-                          size: 50.0,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ResidentList()));
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                              color: const Color(0xfffef5e5),
+                              borderRadius: BorderRadius.circular(20.0)),
+                          height: 100.0,
+                          width: 100.0,
+                          child: const Icon(
+                            Icons.apartment_rounded,
+                            color: Color(0xffebb75c),
+                            size: 50.0,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      Center(
-                        child: Text(
-                          'Residentes',
-                          style: fontNormalBold,
+                        const SizedBox(
+                          height: 10.0,
                         ),
-                      ),
-                    ],
+                        Center(
+                          child: Text(
+                            'Residentes',
+                            style: fontNormalBold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                            color: const Color(0xfff3f8ed),
-                            borderRadius: BorderRadius.circular(20.0)),
-                        height: 100.0,
-                        width: 100.0,
-                        child: const Icon(
-                          Icons.watch_later,
-                          color: Color(0xff92b54b),
-                          size: 50.0,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const BitacoraList()));
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                              color: const Color(0xfff3f8ed),
+                              borderRadius: BorderRadius.circular(20.0)),
+                          height: 100.0,
+                          width: 100.0,
+                          child: const Icon(
+                            Icons.watch_later,
+                            color: Color(0xff92b54b),
+                            size: 50.0,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      Center(
-                        child: Text(
-                          'Bitacora',
-                          style: fontNormalBold,
+                        const SizedBox(
+                          height: 10.0,
                         ),
-                      ),
-                    ],
+                        Center(
+                          child: Text(
+                            'Bitacora',
+                            style: fontNormalBold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -136,73 +159,89 @@ class _ListMainState extends State<ListMain> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                            color: const Color(0xffffefed),
-                            borderRadius: BorderRadius.circular(20.0)),
-                        height: 100.0,
-                        width: 100.0,
-                        child: const Icon(
-                          Icons.fact_check_rounded,
-                          color: Color(0xffce7f7d),
-                          size: 50.0,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const JoinList()));
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                              color: const Color(0xffffefed),
+                              borderRadius: BorderRadius.circular(20.0)),
+                          height: 100.0,
+                          width: 100.0,
+                          child: const Icon(
+                            Icons.fact_check_rounded,
+                            color: Color(0xffce7f7d),
+                            size: 50.0,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      Center(
-                        child: Column(
-                          children: [
-                            Text(
-                              'Reportes',
-                              style: fontNormalBold,
-                            ),
-                            Text(
-                              '',
-                              style: fontNormalBold,
-                            ),
-                          ],
+                        const SizedBox(
+                          height: 10.0,
                         ),
-                      ),
-                    ],
+                        Center(
+                          child: Column(
+                            children: [
+                              Text(
+                                'Ingresos',
+                                style: fontNormalBold,
+                              ),
+                              Text(
+                                '',
+                                style: fontNormalBold,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                            color: const Color(0xfffaf2ff),
-                            borderRadius: BorderRadius.circular(20.0)),
-                        height: 100.0,
-                        width: 100.0,
-                        child: const Icon(
-                          Icons.badge_rounded,
-                          color: Color(0xffb992da),
-                          size: 50.0,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ThirdList()));
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                              color: const Color(0xfffaf2ff),
+                              borderRadius: BorderRadius.circular(20.0)),
+                          height: 100.0,
+                          width: 100.0,
+                          child: const Icon(
+                            Icons.badge_rounded,
+                            color: Color(0xffb992da),
+                            size: 50.0,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      Center(
-                        child: Column(
-                          children: [
-                            Text(
-                              'Residentes',
-                              style: fontNormalBold,
-                            ),
-                            Text(
-                              '',
-                              style: fontNormalBold,
-                            ),
-                          ],
+                        const SizedBox(
+                          height: 10.0,
                         ),
-                      ),
-                    ],
+                        Center(
+                          child: Column(
+                            children: [
+                              Text(
+                                'Acompañantes',
+                                style: fontNormalBold,
+                              ),
+                              Text(
+                                '',
+                                style: fontNormalBold,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   Column(
                     children: [
